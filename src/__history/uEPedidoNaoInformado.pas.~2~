@@ -1,0 +1,13 @@
+unit uEPedidoNaoInformado;
+
+interface
+
+uses
+  Sysutils;
+
+type
+  EPedidoNaoInformado = class(Exception);
+
+implementation
+
+end.

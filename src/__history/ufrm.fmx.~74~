@@ -1,0 +1,621 @@
+object frm: Tfrm
+  Left = 0
+  Top = 0
+  ActiveControl = edtNroPedido
+  Caption = 'Pedidos'
+  ClientHeight = 519
+  ClientWidth = 458
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object pnlDados: TPanel
+    Align = Top
+    Position.Y = 24.000000000000000000
+    Size.Width = 458.000000000000000000
+    Size.Height = 153.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lblNroPedido: TLabel
+      Position.X = 11.000000000000000000
+      Position.Y = 11.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Nro. Pedido'
+      TabOrder = 0
+    end
+    object lblDataEmissao: TLabel
+      Position.X = 227.000000000000000000
+      Position.Y = 11.000000000000000000
+      Text = 'Data Emiss'#227'o'
+      TabOrder = 3
+    end
+    object lblCodCliente: TLabel
+      Position.X = 11.000000000000000000
+      Position.Y = 59.000000000000000000
+      Text = 'C'#243'd. Cliente'
+      TabOrder = 5
+    end
+    object edtNroPedido: TNumberBox
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Cursor = crIBeam
+      Max = 1000000000.000000000000000000
+      Position.X = 11.000000000000000000
+      Position.Y = 28.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object edtEmissao: TDateEdit
+      IsEmpty = True
+      TodayDefault = True
+      Position.X = 227.000000000000000000
+      Position.Y = 28.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+    end
+    object edtCodCliente: TNumberBox
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 6
+      Cursor = crIBeam
+      Max = 1000000000.000000000000000000
+      Position.X = 11.000000000000000000
+      Position.Y = 76.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = edtCodClienteChange
+    end
+    object edtNomeCliente: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 7
+      TabStop = False
+      ReadOnly = True
+      Position.X = 82.000000000000000000
+      Position.Y = 76.000000000000000000
+      Size.Width = 366.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object btnBuscarPedido: TButton
+      Position.X = 83.000000000000000000
+      Position.Y = 28.000000000000000000
+      Size.Width = 102.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Buscar pedido'
+      OnClick = btnBuscarPedidoClick
+    end
+    object lblCidadeUF: TLabel
+      Position.X = 11.000000000000000000
+      Position.Y = 107.000000000000000000
+      Size.Width = 78.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Cidade/UF'
+      TabOrder = 8
+    end
+    object edtCidade: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 9
+      TabStop = False
+      ReadOnly = True
+      Position.X = 10.000000000000000000
+      Position.Y = 124.000000000000000000
+      Size.Width = 151.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object edtUF: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 10
+      TabStop = False
+      ReadOnly = True
+      Position.X = 167.000000000000000000
+      Position.Y = 124.000000000000000000
+      Size.Width = 42.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object linItens: TLine
+    Align = Top
+    LineType = Bottom
+    Position.Y = 177.000000000000000000
+    Size.Width = 458.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object pnlRodape: TPanel
+    Align = Bottom
+    Position.Y = 462.000000000000000000
+    Size.Width = 458.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+    object lblTotalPedido: TLabel
+      Position.X = 12.000000000000000000
+      Position.Y = 8.000000000000000000
+      Text = 'Total do Pedido'
+      TabOrder = 0
+    end
+    object edtTotalPedido: TNumberBox
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Cursor = crIBeam
+      Max = 1000000000.000000000000000000
+      ValueType = Float
+      ReadOnly = True
+      Position.X = 11.000000000000000000
+      Position.Y = 24.000000000000000000
+    end
+    object btnGravarPedido: TButton
+      Position.X = 345.000000000000000000
+      Position.Y = 19.000000000000000000
+      Size.Width = 101.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Gravar Pedido'
+      OnClick = btnGravarPedidoClick
+    end
+    object btnLimparTudo: TButton
+      Position.X = 200.000000000000000000
+      Position.Y = 19.000000000000000000
+      Size.Width = 129.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Limpar Tudo'
+      OnClick = btnLimparTudoClick
+    end
+  end
+  object linDados: TLine
+    Align = Top
+    LineType = Bottom
+    Size.Width = 458.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lblDadosPedido: TLabel
+    Position.X = 11.000000000000000000
+    Position.Y = 4.000000000000000000
+    Text = 'Dados do Pedido'
+    TabOrder = 0
+  end
+  object lblItensPedido: TLabel
+    Position.X = 11.000000000000000000
+    Position.Y = 179.000000000000000000
+    Text = 'Itens do Pedido'
+    TabOrder = 2
+  end
+  object edtCodProduto: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Cursor = crIBeam
+    Max = 1000000000.000000000000000000
+    Position.X = 11.000000000000000000
+    Position.Y = 220.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = edtCodProdutoChange
+  end
+  object edtDescrProduto: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 5
+    TabStop = False
+    ReadOnly = True
+    Position.X = 83.000000000000000000
+    Position.Y = 220.000000000000000000
+    Size.Width = 364.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lblCodProduto: TLabel
+    Position.X = 11.000000000000000000
+    Position.Y = 204.000000000000000000
+    Size.Width = 124.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'C'#243'd. Produto'
+    TabOrder = 3
+  end
+  object lstItensPedido: TListView
+    ItemAppearanceClassName = 'TDynamicAppearance'
+    ItemEditAppearanceClassName = 'TDynamicAppearance'
+    HeaderAppearanceClassName = 'TCustomizeItemObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    ItemIndex = 0
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Position.X = 11.000000000000000000
+    Position.Y = 304.000000000000000000
+    Size.Width = 436.000000000000000000
+    Size.Height = 149.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    OnKeyDown = lstItensPedidoKeyDown
+    ItemAppearance.ItemHeight = 37
+    ItemAppearance.HeaderHeight = 5
+    ItemAppearance.FooterHeight = 5
+    ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'DescrProduto'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.Width = 311.000000000000000000
+        Appearance.Height = 18.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Qtde'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.Width = 63.000000000000000000
+        Appearance.Height = 18.000000000000000000
+        Appearance.PlaceOffset.Y = 18.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'VlrUnitario'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.Width = 94.000000000000000000
+        Appearance.Height = 18.000000000000000000
+        Appearance.PlaceOffset.X = 81.000000000000000000
+        Appearance.PlaceOffset.Y = 18.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'VlrTotal'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Trailing
+        Appearance.Width = 95.000000000000000000
+        Appearance.Height = 18.000000000000000000
+        Appearance.PlaceOffset.X = 296.000000000000000000
+        Appearance.PlaceOffset.Y = 18.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'CodProduto'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Trailing
+        Appearance.Width = 65.000000000000000000
+        Appearance.Height = 18.000000000000000000
+        Appearance.PlaceOffset.X = 326.000000000000000000
+      end>
+    ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+      end>
+    ItemAppearanceObjects.HeaderObjects.Text.Width = 415.000000000000000000
+    ItemAppearanceObjects.HeaderObjects.Text.Height = 17.000000000000000000
+    ItemAppearanceObjects.HeaderObjects.Text.Visible = False
+    ItemAppearanceObjects.FooterObjects.Text.Visible = False
+  end
+  object edtVlrUnitario: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 9
+    Cursor = crIBeam
+    Max = 1000000000.000000000000000000
+    ValueType = Float
+    Position.X = 83.000000000000000000
+    Position.Y = 270.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lblQtde: TLabel
+    Position.X = 11.000000000000000000
+    Position.Y = 254.000000000000000000
+    Size.Width = 86.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Quantidade'
+    TabOrder = 6
+  end
+  object edtQtde: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 7
+    Cursor = crIBeam
+    Max = 1000000000.000000000000000000
+    Position.X = 11.000000000000000000
+    Position.Y = 270.000000000000000000
+    Size.Width = 66.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lblVlrUnitario: TLabel
+    Position.X = 83.000000000000000000
+    Position.Y = 254.000000000000000000
+    Size.Width = 86.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Vlr. Unit'#225'rio'
+    TabOrder = 8
+  end
+  object btnGravar: TButton
+    Position.X = 196.000000000000000000
+    Position.Y = 269.000000000000000000
+    Size.Width = 101.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = 'Atualizar item'
+    Visible = False
+    OnClick = btnGravarClick
+  end
+  object Lang1: TLang
+    Lang = 'pt'
+    Left = 576
+    Top = 496
+  end
+  object lstBinding: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 268
+    Top = 397
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absItemPedido
+      FieldName = 'VlrUnitario'
+      Control = edtVlrUnitario
+      Track = False
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absItemPedido
+      FieldName = 'QtdeItens'
+      Control = edtQtde
+      Track = False
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absItemPedido
+      FieldName = 'CodProduto'
+      Control = edtCodProduto
+      Track = False
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absPedido
+      FieldName = 'NroPedido'
+      Control = edtNroPedido
+      Track = False
+    end
+    object LinkControlToField6: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absPedido
+      FieldName = 'DataEmissao'
+      Control = edtEmissao
+      Track = False
+    end
+    object LinkControlToField7: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absPedido
+      FieldName = 'CodCliente'
+      Control = edtCodCliente
+      Track = False
+    end
+    object LinkControlToField8: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absPedido
+      FieldName = 'NomeCliente'
+      Control = edtNomeCliente
+      Track = False
+    end
+    object LinkControlToField9: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absPedido
+      FieldName = 'VlrTotal'
+      Control = edtTotalPedido
+      Track = False
+    end
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = absItensPedido
+      Control = lstItensPedido
+      FillExpressions = <
+        item
+          SourceMemberName = 'CodProduto'
+          ControlMemberName = 'CodProduto'
+        end
+        item
+          SourceMemberName = 'QtdeItens'
+          ControlMemberName = 'Qtde'
+        end
+        item
+          SourceMemberName = 'VlrUnitario'
+          ControlMemberName = 'VlrUnitario'
+        end
+        item
+          SourceMemberName = 'VlrTotal'
+          ControlMemberName = 'VlrTotal'
+        end
+        item
+          SourceMemberName = 'DescrProduto'
+          ControlMemberName = 'DescrProduto'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absItemPedido
+      FieldName = 'DescrProduto'
+      Control = edtDescrProduto
+      Track = False
+    end
+    object LinkControlToField10: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absPedido
+      FieldName = 'CidadeCliente'
+      Control = edtCidade
+      Track = False
+    end
+    object LinkControlToField11: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = absPedido
+      FieldName = 'UFCliente'
+      Control = edtUF
+      Track = False
+    end
+  end
+  object genPedido: TDataGeneratorAdapter
+    FieldDefs = <
+      item
+        Name = 'NroPedido'
+        FieldType = ftInteger
+        ReadOnly = False
+      end
+      item
+        Name = 'DataEmissao'
+        FieldType = ftDateTime
+        ReadOnly = False
+      end
+      item
+        Name = 'CodCliente'
+        FieldType = ftInteger
+        ReadOnly = False
+      end
+      item
+        Name = 'VlrTotal'
+        FieldType = ftCurrency
+        ReadOnly = False
+      end
+      item
+        Name = 'NomeCliente'
+        ReadOnly = False
+      end
+      item
+        Name = 'CidadeCliente'
+        ReadOnly = False
+      end
+      item
+        Name = 'UFCliente'
+        ReadOnly = False
+      end>
+    Active = True
+    AutoPost = False
+    Options = [loptAllowInsert, loptAllowDelete, loptAllowModify]
+    Left = 400
+    Top = 192
+  end
+  object genItensPedido: TDataGeneratorAdapter
+    FieldDefs = <
+      item
+        Name = 'CodSequencia'
+        FieldType = ftInteger
+        ReadOnly = False
+      end
+      item
+        Name = 'NroPedido'
+        FieldType = ftInteger
+        ReadOnly = False
+      end
+      item
+        Name = 'CodProduto'
+        FieldType = ftInteger
+        ReadOnly = False
+      end
+      item
+        Name = 'QtdeItens'
+        FieldType = ftInteger
+        ReadOnly = False
+      end
+      item
+        Name = 'VlrUnitario'
+        FieldType = ftCurrency
+        ReadOnly = False
+      end
+      item
+        Name = 'VlrTotal'
+        FieldType = ftCurrency
+        ReadOnly = False
+      end
+      item
+        Name = 'DescrProduto'
+        ReadOnly = False
+      end>
+    Active = True
+    AutoPost = False
+    Options = [loptAllowInsert, loptAllowDelete, loptAllowModify]
+    Left = 320
+    Top = 192
+  end
+  object genItemPedido: TDataGeneratorAdapter
+    FieldDefs = <
+      item
+        Name = 'CodSequencia'
+        FieldType = ftInteger
+        ReadOnly = False
+      end
+      item
+        Name = 'NroPedido'
+        FieldType = ftInteger
+        ReadOnly = False
+      end
+      item
+        Name = 'CodProduto'
+        FieldType = ftInteger
+        ReadOnly = False
+      end
+      item
+        Name = 'QtdeItens'
+        FieldType = ftInteger
+        ReadOnly = False
+      end
+      item
+        Name = 'VlrUnitario'
+        FieldType = ftCurrency
+        ReadOnly = False
+      end
+      item
+        Name = 'VlrTotal'
+        FieldType = ftCurrency
+        ReadOnly = False
+      end
+      item
+        Name = 'DescrProduto'
+        ReadOnly = False
+      end>
+    Active = True
+    AutoPost = False
+    Options = [loptAllowInsert, loptAllowDelete, loptAllowModify]
+    Left = 224
+    Top = 192
+  end
+  object absPedido: TAdapterBindSource
+    AutoActivate = True
+    OnCreateAdapter = absPedidoCreateAdapter
+    Adapter = genPedido
+    ScopeMappings = <>
+    Left = 400
+    Top = 264
+  end
+  object absItensPedido: TAdapterBindSource
+    AutoActivate = True
+    OnCreateAdapter = absItensPedidoCreateAdapter
+    Adapter = genItensPedido
+    ScopeMappings = <>
+    Left = 320
+    Top = 264
+  end
+  object absItemPedido: TAdapterBindSource
+    AutoActivate = True
+    OnCreateAdapter = absItemPedidoCreateAdapter
+    Adapter = genItemPedido
+    ScopeMappings = <>
+    Left = 225
+    Top = 264
+  end
+end

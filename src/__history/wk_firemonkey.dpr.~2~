@@ -1,0 +1,17 @@
+program wk_firemonkey;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  ufrm in 'ufrm.pas' {Form1},
+  uClientes in 'uClientes.pas',
+  uDatabaseConfig in 'uDatabaseConfig.pas',
+  uWKConnection in 'uWKConnection.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

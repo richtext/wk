@@ -1,0 +1,17 @@
+program wk;
+
+uses
+  Vcl.Forms,
+  ufrmMain in 'ufrmMain.pas' {frmMain},
+  uDatabaseConfig in 'uDatabaseConfig.pas',
+  uWKConnection in 'uWKConnection.pas',
+  uClientes in 'uClientes.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMain, frmMain);
+  Application.Run;
+end.

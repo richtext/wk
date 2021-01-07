@@ -1,0 +1,32 @@
+program wk_test;
+{
+
+  Delphi DUnit Test Project
+  -------------------------
+  This project contains the DUnit test framework and the GUI/Console test runners.
+  Add "CONSOLE_TESTRUNNER" to the conditional defines entry in the project options
+  to use the console test runner.  Otherwise the GUI test runner will be used by
+  default.
+
+}
+
+{$IFDEF CONSOLE_TESTRUNNER}
+{$APPTYPE CONSOLE}
+{$ENDIF}
+
+uses
+  DUnitTestRunner,
+  uTestDatabaseConfig in 'uTestDatabaseConfig.pas',
+  uDatabaseConfig in '..\src\uDatabaseConfig.pas',
+  uTestWKConnection in 'uTestWKConnection.pas',
+  uWKConnection in '..\src\uWKConnection.pas',
+  udtm in 'udtm.pas' {dtm: TDataModule},
+  uCliente in '..\src\uCliente.pas';
+
+{$R *.RES}
+
+begin
+  dtm := Tdtm.Create(nil);
+  DUnitTestRunner.RunRegisteredTests;
+end.
+

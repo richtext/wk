@@ -1,0 +1,78 @@
+inherited frm_LgXhdpiTb: Tfrm_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 3
+  inherited pnlDados: TPanel
+    Size.Width = 480.000000000000000000
+    inherited edtNomeCliente: TEdit
+      Size.Width = 386.000000000000000000
+    end
+  end
+  inherited linItens: TLine
+    Size.Width = 480.000000000000000000
+  end
+  inherited pnlRodape: TPanel
+    Position.Y = 772.000000000000000000
+    Size.Width = 480.000000000000000000
+  end
+  inherited linDados: TLine
+    Size.Width = 480.000000000000000000
+  end
+  inherited edtDescrProduto: TEdit
+    Size.Width = 386.000000000000000000
+  end
+  inherited lstItensPedido: TListView
+    Size.Width = 455.000000000000000000
+    Size.Height = 460.000000000000000000
+    ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'DescrProduto'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.Width = 413.000000000000000000
+        Appearance.Height = 68.000000000000000000
+        Appearance.Align = Center
+        Appearance.VertAlign = Center
+        Appearance.PlaceOffset.X = 15.000000000000000000
+        Appearance.PlaceOffset.Y = 279.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Qtde'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.Width = 412.000000000000000000
+        Appearance.Height = 18.000000000000000000
+        Appearance.PlaceOffset.Y = 24.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'VlrUnitario'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.Width = 412.000000000000000000
+        Appearance.Height = 18.000000000000000000
+        Appearance.PlaceOffset.Y = 45.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'VlrTotal'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.Width = 412.000000000000000000
+        Appearance.Height = 18.000000000000000000
+        Appearance.PlaceOffset.Y = 66.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'DescrProduto'
+        AppearanceClassName = 'TTextObjectAppearance'
+      end
+      item
+        AppearanceObjectName = 'CodProduto'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 412.000000000000000000
+        Appearance.PlaceOffset.Y = 80.000000000000000000
+      end>
+  end
+  inherited BindingsList1: TBindingsList
+    Left = 260
+    Top = 229
+  end
+end

@@ -1,0 +1,25 @@
+unit uEProdutoNaoEncontrado;
+
+interface
+
+uses
+  Sysutils;
+
+type
+  EProdutoNaoEncontrado = class(Exception)
+  public
+    constructor Create(const ANroPedido: Integer); reintroduce;
+  end;
+
+implementation
+
+resourcestring
+  Msg = 'Produto código %d não encontrado.';
+
+constructor EProdutoNaoEncontrado.Create(const ANroPedido: Integer);
+begin
+  inherited Create(Format(Msg, [ANroPedido]));
+end;
+
+end.
+

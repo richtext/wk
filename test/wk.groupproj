@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C13A3975-A954-4948-BDC8-5A0055205217}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="wk_test.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\src\wk_firemonkey.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\delphilivebindingobjects-master\LiveBindingObjects.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="wk_test">
+        <MSBuild Projects="wk_test.dproj"/>
+    </Target>
+    <Target Name="wk_test:Clean">
+        <MSBuild Projects="wk_test.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="wk_test:Make">
+        <MSBuild Projects="wk_test.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="wk_firemonkey">
+        <MSBuild Projects="..\src\wk_firemonkey.dproj"/>
+    </Target>
+    <Target Name="wk_firemonkey:Clean">
+        <MSBuild Projects="..\src\wk_firemonkey.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="wk_firemonkey:Make">
+        <MSBuild Projects="..\src\wk_firemonkey.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LiveBindingObjects">
+        <MSBuild Projects="C:\delphilivebindingobjects-master\LiveBindingObjects.dproj"/>
+    </Target>
+    <Target Name="LiveBindingObjects:Clean">
+        <MSBuild Projects="C:\delphilivebindingobjects-master\LiveBindingObjects.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LiveBindingObjects:Make">
+        <MSBuild Projects="C:\delphilivebindingobjects-master\LiveBindingObjects.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="wk_test;wk_firemonkey;LiveBindingObjects"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="wk_test:Clean;wk_firemonkey:Clean;LiveBindingObjects:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="wk_test:Make;wk_firemonkey:Make;LiveBindingObjects:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

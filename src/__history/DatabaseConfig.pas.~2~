@@ -1,0 +1,80 @@
+unit DatabaseConfig;
+
+interface
+
+uses
+  SysUtils,
+  IniFiles;
+
+const
+   cFilename = 'wk.ini'
+type
+  TDatabaseConfig = class(TIniFile)
+  private
+    function GetDatabase: string;
+    function GetHost: string;
+    function GetPassword: string;
+    function GetPort: Integer;
+    function GetUser: string;
+    procedure SetDatabase(const Value: string);
+    procedure SetHost(const Value: string);
+    procedure SetPassword(const Value: string);
+    procedure SetPort(Value: Integer);
+    procedure SetUser(const Value: string);
+  public
+    property Database: string read GetDatabase write SetDatabase;
+    property Host: string read GetHost write SetHost;
+    property Password: string read GetPassword write SetPassword;
+    property Port: Integer read GetPort write SetPort;
+    property User: string read GetUser write SetUser;
+  end;
+
+
+implementation
+
+{
+******************************* TDatabaseConfig ********************************
+}
+function TDatabaseConfig.GetDatabase: string;
+begin
+end;
+
+function TDatabaseConfig.GetHost: string;
+begin
+end;
+
+function TDatabaseConfig.GetPassword: string;
+begin
+end;
+
+function TDatabaseConfig.GetPort: Integer;
+begin
+end;
+
+function TDatabaseConfig.GetUser: string;
+begin
+end;
+
+procedure TDatabaseConfig.SetDatabase(const Value: string);
+begin
+end;
+
+procedure TDatabaseConfig.SetHost(const Value: string);
+begin
+end;
+
+procedure TDatabaseConfig.SetPassword(const Value: string);
+begin
+end;
+
+procedure TDatabaseConfig.SetPort(Value: Integer);
+begin
+end;
+
+procedure TDatabaseConfig.SetUser(const Value: string);
+begin
+end;
+
+
+
+end.

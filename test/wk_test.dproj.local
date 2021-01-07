@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/01/04 18:37:24.000.740,C:\wk\test\wk_test.dproj=C:\wk\test\WK.dproj</Transaction>
+    <Transaction>2021/01/04 19:14:43.000.968,=C:\wk\test\uTestDatabaseConfig.pas</Transaction>
+    <Transaction>2021/01/04 19:14:44.000.345,=C:\wk\src\DatabaseConfig.pas</Transaction>
+    <Transaction>2021/01/04 19:26:28.000.455,=C:\wk\src\uDatabaseConfig.pas</Transaction>
+    <Transaction>2021/01/04 19:27:36.000.572,C:\wk\src\DatabaseConfig.pas=</Transaction>
+    <Transaction>2021/01/04 19:39:53.000.785,=C:\wk\test\TestWKConnection.pas</Transaction>
+    <Transaction>2021/01/04 19:39:54.000.027,=C:\wk\src\uWKConnection.pas</Transaction>
+    <Transaction>2021/01/04 19:42:08.000.672,=C:\wk\test\Unit1.pas</Transaction>
+    <Transaction>2021/01/04 19:44:16.000.267,C:\wk\test\Unit1.dfm=C:\wk\test\udtm.dfm</Transaction>
+    <Transaction>2021/01/04 19:44:16.000.267,C:\wk\test\Unit1.pas=C:\wk\test\udtm.pas</Transaction>
+    <Transaction>2021/01/04 21:47:36.000.057,=C:\wk\src\uClientes.pas</Transaction>
+    <Transaction>2021/01/04 22:13:29.000.670,C:\wk\test\TestWKConnection.pas=C:\wk\test\uTestWKConnection.pas</Transaction>
+    <Transaction>2021/01/05 18:44:56.000.943,C:\wk\src\uCliente.pas=C:\wk\src\uClientes.pas</Transaction>
+    <Transaction>2021/01/05 21:28:23.000.819,=C:\wk\src\uProduto.pas</Transaction>
+    <Transaction>2021/01/05 21:28:23.000.857,=C:\wk\src\uPedido.pas</Transaction>
+    <Transaction>2021/01/05 21:28:23.000.941,=C:\wk\src\uItemPedido.pas</Transaction>
+    <Transaction>2021/01/06 19:14:13.509,=C:\wk\src\uEProdutoNaoEncontrado.pas</Transaction>
+    <Transaction>2021/01/06 19:14:13.555,=C:\wk\src\uWKObject.pas</Transaction>
+    <Transaction>2021/01/06 19:14:13.587,=C:\wk\src\uEPedidoNaoEncontrado.pas</Transaction>
+    <Transaction>2021/01/06 19:14:13.618,=C:\wk\src\uEPedidoNaoInformado.pas</Transaction>
+  </Transactions>
+</BorlandProject>

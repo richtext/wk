@@ -1,5 +1,5 @@
 ﻿[]
-Coordinates=560,0,90,195
+Coordinates=90,72,41,51
 Visible=False
 LayerNames=
 
@@ -151,4 +151,7 @@ Coordinates=120,300,64,51
 
 [edtUF]
 Coordinates=20,240,43,51
+
+[btnExcluirPedido]
+Coordinates=366,273,99,51
 

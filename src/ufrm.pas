@@ -41,6 +41,9 @@ uses
   FMX.NumberBox,
   FMX.Controls.Presentation;
 
+const
+  sIDStrToCurrency = 'StrToCurrency';
+
 type
   TItensPedidoBind = TListBindSourceAdapter<TItemPedido>;
   TPedidoBind = TObjectBindSourceAdapter<TPedido>;
@@ -69,7 +72,7 @@ type
     lblVlrUnitario: TLabel;
     btnGravar: TButton;
     lblTotalPedido: TLabel;
-    edtTotalPedido: TNumberBox;
+    edtTotalPedido: TEdit;
     btnGravarPedido: TButton;
     lstBinding: TBindingsList;
     btnBuscarPedido: TButton;
@@ -115,6 +118,8 @@ type
     procedure btnGravarPedidoClick(Sender: TObject);
     procedure edtNroPedidoEnter(Sender: TObject);
     procedure btnExcluirPedidoClick(Sender: TObject);
+    procedure lstItensPedidoUpdateObjects(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     FItensPedidoBind: TItensPedidoBind;
     FPedidoBind: TPedidoBind;
@@ -124,8 +129,6 @@ type
     FCliente: TCliente;
     FItemPedido: TItemPedido;
     FItemEmEdicao: Integer;
-    procedure ItensAfterDelete(Adapter: TBindSourceAdapter);
-    procedure ItensAfterInsert(Adapter: TBindSourceAdapter);
   end;
 
 var
@@ -146,8 +149,6 @@ procedure Tfrm.absItensPedidoCreateAdapter(Sender: TObject;
   var ABindSourceAdapter: TBindSourceAdapter);
 begin
   FItensPedidoBind := TItensPedidoBind.Create(Self, FPedido.ItensPedido, False);
-  FItensPedidoBind.AfterDelete := ItensAfterDelete;
-  FItensPedidoBind.AfterInsert := ItensAfterInsert;
   ABindSourceAdapter := FItensPedidoBind;
 end;
 
@@ -330,6 +331,8 @@ begin
   FItemEmEdicao := 0;
   FPedido.Clear;
   FPedidoBind.Refresh;
+  LinkListControlToField1.Active := True;
+  LinkControlToField9.Active := True;
 end;
 
 procedure Tfrm.FormDestroy(Sender: TObject);
@@ -337,16 +340,6 @@ begin
   FItemPedido.Free;
   FProduto.Free;
   FCliente.Free;
-end;
-
-procedure Tfrm.ItensAfterDelete(Adapter: TBindSourceAdapter);
-begin
-
-end;
-
-procedure Tfrm.ItensAfterInsert(Adapter: TBindSourceAdapter);
-begin
-
 end;
 
 procedure Tfrm.lstItensPedidoKeyDown(Sender: TObject; var Key: Word;
@@ -374,6 +367,20 @@ begin
         end;
       end);
   end;
+end;
+
+procedure Tfrm.lstItensPedidoUpdateObjects(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  oText: TListItemText;
+  s: string;
+begin
+  oText := AItem.Objects.FindDrawable('VlrUnitario')  as TListItemText;
+  if Assigned(oText) then
+    oText.Text := Format('%m', [StrToFloat(oText.Text)]);
+  oText := AItem.Objects.FindDrawable('VlrTotal')  as TListItemText;
+  if Assigned(oText) then
+    oText.Text := Format('%m', [StrToFloat(oText.Text)]);
 end;
 
 end.

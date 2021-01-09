@@ -16,10 +16,10 @@ type
     FDescrProduto: string;
     FNroPedido: Integer;
     FQtdeItens: Integer;
-    FVlrTotal: Double;
-    FVlrUnitario: Double;
+    FVlrTotal: Currency;
+    FVlrUnitario: Currency;
     procedure SetQtdeItens(const Value: Integer);
-    procedure SetVlrUnitario(const Value: Double);
+    procedure SetVlrUnitario(const Value: Currency);
     procedure AtualizarItem;
     procedure InserirItem;
   public
@@ -31,8 +31,8 @@ type
     property DescrProduto: string read FDescrProduto write FDescrProduto;
     property NroPedido: Integer read FNroPedido write FNroPedido;
     property QtdeItens: Integer read FQtdeItens write SetQtdeItens;
-    property VlrTotal: Double read FVlrTotal write FVlrTotal;
-    property VlrUnitario: Double read FVlrUnitario write SetVlrUnitario;
+    property VlrTotal: Currency read FVlrTotal write FVlrTotal;
+    property VlrUnitario: Currency read FVlrUnitario write SetVlrUnitario;
 
   end;
 
@@ -251,7 +251,7 @@ begin
   FVlrTotal := FQtdeItens * FVlrUnitario;
 end;
 
-procedure TItemPedido.SetVlrUnitario(const Value: Double);
+procedure TItemPedido.SetVlrUnitario(const Value: Currency);
 begin
   FVlrUnitario := Value;
   FVlrTotal := FQtdeItens * FVlrUnitario;

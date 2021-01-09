@@ -157,16 +157,17 @@ object frm: Tfrm
     object lblTotalPedido: TLabel
       Position.X = 12.000000000000000000
       Position.Y = 8.000000000000000000
+      Size.Width = 98.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
       Text = 'Total do Pedido'
       TabOrder = 0
     end
-    object edtTotalPedido: TNumberBox
+    object edtTotalPedido: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       TabOrder = 1
-      Cursor = crIBeam
-      Max = 1000000000.000000000000000000
-      ValueType = Float
       ReadOnly = True
+      TextSettings.HorzAlign = Trailing
       Position.X = 11.000000000000000000
       Position.Y = 24.000000000000000000
     end
@@ -248,7 +249,6 @@ object frm: Tfrm
     ItemEditAppearanceClassName = 'TDynamicAppearance'
     HeaderAppearanceClassName = 'TCustomizeItemObjects'
     FooterAppearanceClassName = 'TListHeaderObjects'
-    ItemIndex = 0
     Anchors = [akLeft, akTop, akRight, akBottom]
     Position.X = 11.000000000000000000
     Position.Y = 304.000000000000000000
@@ -271,7 +271,7 @@ object frm: Tfrm
       item
         AppearanceObjectName = 'Qtde'
         AppearanceClassName = 'TTextObjectAppearance'
-        Appearance.TextAlign = Leading
+        Appearance.TextAlign = Trailing
         Appearance.Width = 63.000000000000000000
         Appearance.Height = 18.000000000000000000
         Appearance.PlaceOffset.Y = 18.000000000000000000
@@ -282,7 +282,7 @@ object frm: Tfrm
         Appearance.TextAlign = Leading
         Appearance.Width = 94.000000000000000000
         Appearance.Height = 18.000000000000000000
-        Appearance.PlaceOffset.X = 81.000000000000000000
+        Appearance.PlaceOffset.X = 65.000000000000000000
         Appearance.PlaceOffset.Y = 18.000000000000000000
       end
       item
@@ -428,28 +428,35 @@ object frm: Tfrm
       DataSource = absPedido
       FieldName = 'VlrTotal'
       Control = edtTotalPedido
+      AutoActivate = False
       Track = False
+      CustomFormat = 'CurrencyToStr(%s)'
     end
     object LinkListControlToField1: TLinkListControlToField
       Category = 'Quick Bindings'
       DataSource = absItensPedido
       Control = lstItensPedido
+      AutoActivate = False
       FillExpressions = <
         item
           SourceMemberName = 'CodProduto'
           ControlMemberName = 'CodProduto'
+          CustomFormat = '"C'#243'digo " + %s'
         end
         item
           SourceMemberName = 'QtdeItens'
           ControlMemberName = 'Qtde'
+          CustomFormat = '%s + '#39' x'#39
         end
         item
           SourceMemberName = 'VlrUnitario'
           ControlMemberName = 'VlrUnitario'
+          CustomFormat = 'CurrencyToStr(%s)'
         end
         item
           SourceMemberName = 'VlrTotal'
           ControlMemberName = 'VlrTotal'
+          CustomFormat = 'CurrencyToStr(%s)'
         end
         item
           SourceMemberName = 'DescrProduto'

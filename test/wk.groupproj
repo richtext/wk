@@ -9,9 +9,6 @@
         <Projects Include="..\src\wk_firemonkey.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="C:\delphilivebindingobjects-master\LiveBindingObjects.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -38,23 +35,14 @@
     <Target Name="wk_firemonkey:Make">
         <MSBuild Projects="..\src\wk_firemonkey.dproj" Targets="Make"/>
     </Target>
-    <Target Name="LiveBindingObjects">
-        <MSBuild Projects="C:\delphilivebindingobjects-master\LiveBindingObjects.dproj"/>
-    </Target>
-    <Target Name="LiveBindingObjects:Clean">
-        <MSBuild Projects="C:\delphilivebindingobjects-master\LiveBindingObjects.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="LiveBindingObjects:Make">
-        <MSBuild Projects="C:\delphilivebindingobjects-master\LiveBindingObjects.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="wk_test;wk_firemonkey;LiveBindingObjects"/>
+        <CallTarget Targets="wk_test;wk_firemonkey"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="wk_test:Clean;wk_firemonkey:Clean;LiveBindingObjects:Clean"/>
+        <CallTarget Targets="wk_test:Clean;wk_firemonkey:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="wk_test:Make;wk_firemonkey:Make;LiveBindingObjects:Make"/>
+        <CallTarget Targets="wk_test:Make;wk_firemonkey:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

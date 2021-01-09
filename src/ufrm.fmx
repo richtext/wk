@@ -318,8 +318,11 @@ object frm: Tfrm
     Cursor = crIBeam
     Max = 1000000000.000000000000000000
     ValueType = Float
+    TextSettings.HorzAlign = Trailing
     Position.X = 83.000000000000000000
     Position.Y = 270.000000000000000000
+    HorzIncrement = 0.000000000000000000
+    VertIncrement = 0.000000000000000000
     Size.Width = 100.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
